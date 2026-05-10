@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورقة عمل إبداعية - الآلات البسيطة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a6b9a;
+    --primary-light: #e6f4fb;
+    --secondary: #2ea87e;
+    --secondary-light: #e6f7f2;
+    --accent: #f97316;
+    --accent-light: #fff4ed;
+    --purple: #7c3aed;
+    --purple-light: #f3eeff;
+    --gold: #d97706;
+    --gold-light: #fffbeb;
+    --danger: #dc2626;
+    --bg: #f0f7ff;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #cbd5e1;
+    --shadow: 0 4px 24px rgba(26,107,154,0.10);
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    direction: rtl;
+  }
+
+  /* HEADER */
+  .page-header {
+    background: linear-gradient(135deg, #0f4c75 0%, #1a6b9a 50%, #1b8ca1 100%);
+    color: white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 240px; height: 240px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -40px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    position: relative;
+    z-index: 2;
+  }
+  .logo-wrap {
+    background: white;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    flex-shrink: 0;
+  }
+  .logo-wrap img { width: 90px; height: 90px; object-fit: contain; display: block; border-radius: 10px; }
+  .header-text { flex: 1; }
+  .school-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 6px;
+  }
+  .main-title {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .subtitle { font-size: 16px; color: rgba(255,255,255,0.85); font-weight: 500; }
+  .header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(4px);
+  }
+  .badge.gold { background: rgba(217,119,6,0.35); border-color: rgba(217,119,6,0.5); }
+
+  /* META BAR */
+  .meta-bar {
+    background: white;
+    border-bottom: 2px solid #e2e8f0;
+    padding: 0;
+  }
+  .meta-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .meta-item { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+  .meta-icon {
+    width: 32px; height: 32px;
+    background: var(--primary-light);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .meta-label { color: var(--muted); font-size: 12px; }
+  .meta-value { font-weight: 700; color: var(--text); font-size: 14px; }
+
+  /* MAIN */
+  .main { max-width: 960px; margin: 0 auto; padding: 32px 24px 60px; }
+
+  /* SECTION */
+  .section {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+    overflow: hidden;
+    border: 1.5px solid #e2e8f0;
+  }
+  .section-head {
+    padding: 20px 28px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1.5px solid #f1f5f9;
+  }
+  .section-icon {
+    width: 46px; height: 46px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .section-icon.blue { background: var(--primary-light); }
+  .section-icon.green { background: var(--secondary-light); }
+  .section-icon.orange { background: var(--accent-light); }
+  .section-icon.purple { background: var(--purple-light); }
+  .section-icon.gold { background: var(--gold-light); }
+  .section-num {
+    width: 28px; height: 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title { font-size: 20px; font-weight: 800; color: var(--text); }
+  .section-desc { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .section-body { padding: 24px 28px; }
+
+  /* INTRO BOXES */
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .intro-card {
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .intro-card.blue { background: var(--primary-light); border: 1.5px solid #bfdbf7; }
+  .intro-card.green { background: var(--secondary-light); border: 1.5px solid #a7f3d0; }
+  .intro-card.orange { background: var(--accent-light); border: 1.5px solid #fed7aa; }
+  .intro-card.purple { background: var(--purple-light); border: 1.5px solid #ddd6fe; }
+  .intro-card-icon { font-size: 28px; }
+  .intro-card-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+  .intro-card.blue .intro-card-title { color: var(--primary); }
+  .intro-card.green .intro-card-title { color: #065f46; }
+  .intro-card.orange .intro-card-title { color: #9a3412; }
+  .intro-card.purple .intro-card-title { color: var(--purple); }
+  .intro-card-text { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* INFO BOX */
+  .info-box {
+    background: #f0f7ff;
+    border: 1.5px solid #bfdbf7;
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+  }
+  .info-box .info-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .info-box p, .info-box li { font-size: 14px; color: var(--text); line-height: 1.8; }
+  .info-box ul { padding-right: 18px; }
+  .formula-box {
+    background: #0f4c75;
+    color: white;
+    border-radius: 12px;
+    padding: 16px 22px;
+    text-align: center;
+    margin: 14px 0;
+  }
+  .formula-box .formula-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+  .formula-box .formula-text { font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+
+  /* SIMULATION */
+  .sim-container {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .sim-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .sim-canvas-wrap {
+    background: white;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0;
+    padding: 12px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  canvas { border-radius: 8px; }
+  .sim-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .ctrl-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .ctrl-group input[type=range] {
+    width: 100%;
+    accent-color: var(--primary);
+    height: 6px;
+    cursor: pointer;
+  }
+  .ctrl-val {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-top: 4px;
+  }
+  .sim-result {
+    background: linear-gradient(135deg, #0f4c75, #1b8ca1);
+    color: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+  .res-label { font-size: 12px; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+  .res-value { font-size: 20px; font-weight: 900; }
+  .res-unit { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+  .balanced-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 6px;
+  }
+
+  /* PULLEY SIM */
+  .pulley-sim { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+
+  /* ACTIVITY */
+  .activity-box {
+    background: #fffbeb;
+    border: 2px solid #fde68a;
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .activity-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #92400e;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .activity-box p { font-size: 14px; color: #78350f; line-height: 1.8; }
+
+  /* QUESTION */
+  .q-item {
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1.5px solid #e2e8f0;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .q-text { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.6; }
+  .q-hint { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  textarea.q-input {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    resize: vertical;
+    background: white;
+    transition: border-color 0.2s;
+    direction: rtl;
+  }
+  textarea.q-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,107,154,0.1); }
+  input.q-input {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    background: white;
+    direction: rtl;
+    transition: border-color 0.2s;
+  }
+  input.q-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,107,154,0.1); }
+
+  /* OPTIONS */
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+  .option-btn {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: right;
+    color: var(--text);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .option-btn:hover { border-color: var(--primary); background: var(--primary-light); }
+  .option-btn.correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
+  .option-btn.wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+  .option-btn.reveal { background: #d1fae5; border-color: #10b981; color: #065f46; }
+  .feedback-text { font-size: 13px; margin-top: 8px; padding: 8px 12px; border-radius: 8px; font-weight: 600; }
+  .feedback-text.ok { background: #d1fae5; color: #065f46; }
+  .feedback-text.err { background: #fee2e2; color: #991b1b; }
+
+  /* CALC TOOL */
+  .calc-tool {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 14px;
+  }
+  .calc-title { font-size: 14px; font-weight: 800; color: var(--primary); margin-bottom: 14px; text-align: center; }
+  .calc-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .calc-label { font-size: 14px; font-weight: 700; color: var(--muted); white-space: nowrap; }
+  .calc-input {
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 700;
+    width: 100px;
+    text-align: center;
+    font-family: inherit;
+    direction: ltr;
+  }
+  .calc-input:focus { outline: none; border-color: var(--primary); }
+  .calc-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 4px;
+  }
+  .calc-btn:hover { background: #0f4c75; }
+  .calc-answer {
+    background: #f0f7ff;
+    border: 1.5px solid #bfdbf7;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+  }
+
+  /* RUBRIC */
+  .rubric-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .rubric-table th {
+    background: #0f4c75;
+    color: white;
+    padding: 12px 14px;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid #0a3d5e;
+  }
+  .rubric-table td {
+    padding: 11px 14px;
+    border: 1px solid #e2e8f0;
+    vertical-align: top;
+    line-height: 1.5;
+    font-size: 13px;
+  }
+  .rubric-table tr:nth-child(even) td { background: #f8fafc; }
+  .rubric-table tr:nth-child(odd) td { background: white; }
+  .score-badge {
+    display: inline-block;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto;
+  }
+  .score-badge.s4 { background: #d1fae5; color: #065f46; }
+  .score-badge.s3 { background: #dbeafe; color: #1e40af; }
+  .score-badge.s2 { background: #fef3c7; color: #92400e; }
+  .score-badge.s1 { background: #fee2e2; color: #991b1b; }
+  .crit-name { font-weight: 800; color: var(--primary); }
+
+  /* REFLECTION */
+  .reflect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+  .reflect-face-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .face-btn {
+    flex: 1; min-width: 70px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 28px;
+    transition: all 0.2s;
+  }
+  .face-btn:hover { transform: scale(1.08); }
+  .face-btn.selected { border-color: var(--primary); background: var(--primary-light); box-shadow: 0 0 0 3px rgba(26,107,154,0.15); }
+  .face-label { font-size: 11px; color: var(--muted); margin-top: 4px; font-weight: 600; }
+  .check-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; color: var(--text); cursor: pointer; }
+  .check-row input { width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; }
+
+  /* SUBMIT */
+  .submit-area { text-align: center; margin-top: 20px; }
+  .submit-btn {
+    background: linear-gradient(135deg, #0f4c75, #1b8ca1);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 44px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 18px rgba(26,107,154,0.3);
+  }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,107,154,0.35); }
+  .success-msg {
+    background: linear-gradient(135deg, #065f46, #059669);
+    color: white;
+    border-radius: 14px;
+    padding: 24px 32px;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    display: none;
+    margin-top: 16px;
+    animation: pop 0.4s ease;
+  }
+  @keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  /* PROGRESS */
+  .progress-bar-wrap { background: #e2e8f0; border-radius: 99px; height: 8px; margin: 8px 0 4px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width 0.4s ease; }
+
+  /* STEP BADGE */
+  .step-badge {
+    background: var(--primary);
+    color: white;
+    border-radius: 30px;
+    padding: 4px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  /* DRAG MATCH */
+  .match-area { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+  .match-col { flex: 1; min-width: 200px; }
+  .match-col-title { font-size: 13px; font-weight: 800; color: var(--muted); margin-bottom: 10px; text-align: center; }
+  .drag-item {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: grab;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .drag-item:hover { border-color: var(--primary); background: var(--primary-light); transform: translateY(-1px); }
+  .drag-item.dragging { opacity: 0.4; cursor: grabbing; }
+  .drop-zone {
+    background: #f8fafc;
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    min-height: 46px;
+    transition: all 0.2s;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .drop-zone.over { border-color: var(--primary); background: var(--primary-light); }
+  .drop-zone.filled { background: #d1fae5; border-color: #10b981; border-style: solid; color: #065f46; font-weight: 700; }
+  .drop-zone.wrong-fill { background: #fee2e2; border-color: #ef4444; border-style: solid; color: #991b1b; font-weight: 700; }
+  .match-check-btn {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+  }
+  .match-check-btn:hover { background: #059669; }
+
+  .dl-btn {
+    color: white; border: none; border-radius: 14px;
+    padding: 15px 32px; font-family: inherit; font-size: 16px; font-weight: 800;
+    cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    letter-spacing: 0.3px;
+  }
+  .dl-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.22); }
+  .dl-btn:active { transform: scale(0.97); }
+
+  @media (max-width: 640px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .reflect-grid { grid-template-columns: 1fr; }
+    .sim-controls { grid-template-columns: 1fr; }
+    .options-grid { grid-template-columns: 1fr; }
+    .header-inner { flex-direction: column; text-align: center; }
+    .match-area { flex-direction: column; }
+    .sim-result { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <img src="https://i.postimg.cc/26jnR4Q1/sml-byt-hspr.png" alt="شعار المدرسة" onerror="this.style.display='none'">
+    </div>
+    <div class="header-text">
+      <div class="school-label">وزارة التربية والتعليم</div>
+      <h1 class="main-title">⚙️ الآلات البسيطة</h1>
+      <div class="subtitle">قانون الرافعات والبكرات — ورقة عمل إبداعية تفاعلية</div>
+      <div class="header-badges">
+        <span class="badge">🎓 الصف السابع</span>
+        <span class="badge">🔬 الفيزياء</span>
+        <span class="badge gold">⭐ مستوى التطبيق</span>
+        <span class="badge">👩‍🏫 أ. منى مصطفى</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- META BAR -->
+<div class="meta-bar">
+  <div class="meta-inner">
+    <div class="meta-item">
+      <div class="meta-icon">📝</div>
+      <div><div class="meta-label">نوع التقييم</div><div class="meta-value">ورقة عمل إبداعية</div></div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-icon">⏱️</div>
+      <div><div class="meta-label">الوقت المقترح</div><div class="meta-value">45 دقيقة</div></div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-icon">💯</div>
+      <div><div class="meta-label">الدرجة الكلية</div><div class="meta-value">20 درجة</div></div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-icon">🧠</div>
+      <div><div class="meta-label">مستوى التفكير</div><div class="meta-value">التطبيق (بلوم)</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- INSTRUCTIONS -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon blue">📋</div>
+      <div>
+        <div class="section-title">تعليمات المهمة</div>
+        <div class="section-desc">اقرأ بعناية قبل البدء</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="intro-grid">
+        <div class="intro-card blue">
+          <span class="intro-card-icon">🎯</span>
+          <div>
+            <div class="intro-card-title">هدف المهمة</div>
+            <div class="intro-card-text">تطبيق قانون الرافعات والبكرات لحل مسائل واقعية وفهم كيف تساعدنا الآلات على تخفيف الجهد.</div>
+          </div>
+        </div>
+        <div class="intro-card green">
+          <span class="intro-card-icon">📚</span>
+          <div>
+            <div class="intro-card-title">تسلسل المهمة</div>
+            <div class="intro-card-text">ستبدأ بالتعرف على الآلات، ثم المحاكاة التفاعلية، ثم التطبيق، ثم التأمل الذاتي.</div>
+          </div>
+        </div>
+        <div class="intro-card orange">
+          <span class="intro-card-icon">⚠️</span>
+          <div>
+            <div class="intro-card-title">انتبه</div>
+            <div class="intro-card-text">اقرأ كل سؤال جيداً واستخدم المحاكاة للمساعدة على الفهم قبل الإجابة.</div>
+          </div>
+        </div>
+        <div class="intro-card purple">
+          <span class="intro-card-icon">🌟</span>
+          <div>
+            <div class="intro-card-title">نصيحة المعلمة</div>
+            <div class="intro-card-text">لا تخش الخطأ! المحاولة هي الطريق للتعلم. حظاً موفقاً 😊</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: INTRO -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon blue">🔍</div>
+      <div class="section-num">١</div>
+      <div>
+        <div class="section-title">الجزء الأول: التعرف على الآلات البسيطة</div>
+        <div class="section-desc">دعنا نبدأ من الأساس</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <span class="step-badge">خطوة ١ من ٤ — التعرف والاستكشاف</span>
+
+      <div class="info-box">
+        <div class="info-title">🤔 ما هي الآلة البسيطة؟</div>
+        <p>الآلة البسيطة هي أداة تساعدنا على أداء العمل بجهد <strong>أقل</strong>. هي لا توفّر عملاً، لكنها تغير:</p>
+        <ul style="margin-top:8px;">
+          <li>📏 <strong>مقدار القوة</strong> المبذولة</li>
+          <li>📐 <strong>اتجاه القوة</strong></li>
+          <li>🔄 <strong>المسافة</strong> التي تتحرك فيها القوة</li>
+        </ul>
+      </div>
+
+      <div class="intro-grid" style="margin-top:0;">
+        <div class="intro-card blue">
+          <span class="intro-card-icon">⚖️</span>
+          <div>
+            <div class="intro-card-title">الرافعة (الذراع)</div>
+            <div class="intro-card-text">عصا صلبة تدور حول نقطة ارتكاز. مثل: المقص، المضرب، الترجيحة.</div>
+          </div>
+        </div>
+        <div class="intro-card green">
+          <span class="intro-card-icon">🎡</span>
+          <div>
+            <div class="intro-card-title">البكرة</div>
+            <div class="intro-card-text">عجلة يمر عليها حبل. تغير اتجاه القوة أو تضخّمها. مثل: رافعة البناء، حبل العلم.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCHING ACTIVITY -->
+      <div class="activity-box" style="margin-top:18px;">
+        <div class="activity-title">🎮 نشاط تفاعلي: صل كل آلة بمثالها من الحياة اليومية</div>
+        <p style="margin-bottom:14px; font-size:13px;">اسحب اسم كل آلة وضعها في المكان الصحيح ✋</p>
+        <div class="match-area" id="matchArea">
+          <div class="match-col">
+            <div class="match-col-title">🃏 الآلات (اسحب من هنا)</div>
+            <div class="drag-item" draggable="true" data-val="رافعة" id="d1">⚖️ رافعة</div>
+            <div class="drag-item" draggable="true" data-val="بكرة ثابتة" id="d2">🎡 بكرة ثابتة</div>
+            <div class="drag-item" draggable="true" data-val="بكرة متحركة" id="d3">🔄 بكرة متحركة</div>
+            <div class="drag-item" draggable="true" data-val="مستوى مائل" id="d4">📐 مستوى مائل</div>
+          </div>
+          <div class="match-col">
+            <div class="match-col-title">📌 أمثلة (ضع هنا)</div>
+            <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">🪣 رفع دلو الماء من البئر</div>
+            <div class="drop-zone" data-ans="بكرة ثابتة" id="dz1">اسحب وأفلت هنا...</div>
+            <div style="font-size:13px; color:var(--muted); margin-bottom:6px; margin-top:8px;">🏗️ رافعة البناء الضخمة</div>
+            <div class="drop-zone" data-ans="بكرة متحركة" id="dz2">اسحب وأفلت هنا...</div>
+            <div style="font-size:13px; color:var(--muted); margin-bottom:6px; margin-top:8px;">🪺 الترجيحة في الحديقة</div>
+            <div class="drop-zone" data-ans="رافعة" id="dz3">اسحب وأفلت هنا...</div>
+            <div style="font-size:13px; color:var(--muted); margin-bottom:6px; margin-top:8px;">🚗 منحدر المستشفى للكراسي المتحركة</div>
+            <div class="drop-zone" data-ans="مستوى مائل" id="dz4">اسحب وأفلت هنا...</div>
+          </div>
+        </div>
+        <button class="match-check-btn" onclick="checkMatch()">✅ تحقق من إجاباتي</button>
+        <div id="matchResult" style="margin-top:10px; font-size:14px; font-weight:700;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: LEVER LAW + SIMULATION -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon green">⚖️</div>
+      <div class="section-num">٢</div>
+      <div>
+        <div class="section-title">الجزء الثاني: قانون الرافعات والمحاكاة</div>
+        <div class="section-desc">تعلّم القانون ثم جرّبه بنفسك!</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <span class="step-badge">خطوة ٢ من ٤ — فهم القانون</span>
+
+      <div class="info-box">
+        <div class="info-title">📖 قانون الرافعات (قانون العزوم)</div>
+        <p>تكون الرافعة في حالة اتزان عندما:</p>
+        <div class="formula-box">
+          <div class="formula-label">قانون الرافعة</div>
+          <div class="formula-text">القوة × ذراعها = الحمل × ذراعه</div>
+        </div>
+        <p>أي: <strong>F₁ × d₁ = F₂ × d₂</strong></p>
+        <ul style="margin-top:10px;">
+          <li>🔵 <strong>F₁</strong> = القوة المبذولة (نيوتن)</li>
+          <li>🔵 <strong>d₁</strong> = المسافة من القوة إلى نقطة الارتكاز (متر)</li>
+          <li>🔴 <strong>F₂</strong> = وزن الحمل (نيوتن)</li>
+          <li>🔴 <strong>d₂</strong> = المسافة من الحمل إلى نقطة الارتكاز (متر)</li>
+        </ul>
+      </div>
+
+      <!-- LEVER SIMULATION -->
+      <div class="sim-container">
+        <div class="sim-title">🎮 محاكاة الترجيحة في ملعب المدرسة — حرّك الأشرطة وشاهد ماذا يحدث!</div>
+        <div style="background:#fff4ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#92400e;font-weight:600;">
+          🏫 <strong>الموقف:</strong> أنت وصديقك تلعبان على الترجيحة في فناء المدرسة. صديقك أثقل منك! غيّر مكانك على الترجيحة حتى تتوازنا.
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="leverCanvas" width="680" height="240"></canvas>
+        </div>
+        <div class="sim-controls">
+          <div class="ctrl-group">
+            <label>🧒 مسافتك من المنتصف (أنت — اليسار)</label>
+            <input type="range" id="d1Lever" min="0.5" max="4" value="3" step="0.1" oninput="updateLever()">
+            <div class="ctrl-val"><span id="d1Val">3.0</span> متر</div>
+          </div>
+          <div class="ctrl-group">
+            <label>👦 مسافة صديقك من المنتصف (اليمين)</label>
+            <input type="range" id="d2Lever" min="0.5" max="4" value="2" step="0.1" oninput="updateLever()">
+            <div class="ctrl-val"><span id="d2Val">2.0</span> متر</div>
+          </div>
+          <div class="ctrl-group">
+            <label>⚖️ وزن صديقك</label>
+            <input type="range" id="f2Lever" min="200" max="600" value="400" step="10" oninput="updateLever()">
+            <div class="ctrl-val"><span id="f2Val">400</span> نيوتن</div>
+          </div>
+          <div class="ctrl-group" style="display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;">
+              <div style="font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px;">📊 حالة الترجيحة</div>
+              <div id="balanceTag" class="balanced-tag" style="background:#d1fae5;color:#065f46;">⚖️ متزنة</div>
+            </div>
+          </div>
+        </div>
+        <div class="sim-result">
+          <div><div class="res-label">وزنك اللازم للتوازن</div><div class="res-value" id="f1Res">267</div><div class="res-unit">نيوتن</div></div>
+          <div><div class="res-label">عزمك (أنت)</div><div class="res-value" id="m1Res">800</div><div class="res-unit">ن·م</div></div>
+          <div><div class="res-label">عزم صديقك</div><div class="res-value" id="m2Res">800</div><div class="res-unit">ن·م</div></div>
+        </div>
+        <div id="leverTip" style="margin-top:12px;background:#f0f7ff;border:1.5px solid #bfdbf7;border-radius:10px;padding:12px 16px;font-size:14px;color:#1e3a5f;font-weight:600;text-align:center;">
+          💡 إذا كان صديقك أثقل، يجب أن يجلس <strong>أقرب</strong> من المنتصف لتتوازنا!
+        </div>
+      </div>
+
+      <!-- LEVER QUESTIONS -->
+      <div class="q-item">
+        <div class="q-text">١. جرّب في المحاكاة: أنت وزنك 300 نيوتن وصديقك 400 نيوتن. ماذا تفعل لتتوازنا على الترجيحة؟</div>
+        <div class="q-hint">💡 تلميح: غيّر مسافتك من المنتصف وانظر متى يتوازن الوزنان</div>
+        <div class="options-grid">
+          <button class="option-btn" onclick="checkOpt(this,'lever_q1','wrong')">أجلس في نفس المكان</button>
+          <button class="option-btn" onclick="checkOpt(this,'lever_q1','correct')">أبتعد عن المنتصف أكثر منه 📏</button>
+          <button class="option-btn" onclick="checkOpt(this,'lever_q1','wrong')">أطلب منه أن يقفز</button>
+          <button class="option-btn" onclick="checkOpt(this,'lever_q1','wrong')">لا يمكن التوازن أبداً</button>
+        </div>
+        <div id="lever_q1_fb" class="feedback-text" style="display:none;"></div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">٢. سارة وزنها 300 نيوتن تجلس على بُعد 2 متر من مركز الترجيحة. أخوها وزنه 400 نيوتن — على أي مسافة يجلس ليتوازنا؟</div>
+        <div class="q-hint">💡 استخدم: وزن سارة × مسافتها = وزن أخيها × مسافته → 300 × 2 = 400 × ؟</div>
+        <div class="calc-tool">
+          <div class="calc-title">🔢 احسب بنفسك</div>
+          <div class="calc-row">
+            <span class="calc-label">وزن سارة:</span>
+            <input class="calc-input" value="300" readonly> نيوتن
+            <span class="calc-label">× مسافتها:</span>
+            <input class="calc-input" value="2" readonly> متر
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">= وزن أخيها:</span>
+            <input class="calc-input" value="400" readonly> نيوتن
+            <span class="calc-label">× مسافته:</span>
+            <input class="calc-input" id="lCalcD1" type="number" placeholder="؟" min="0" step="0.1"> متر
+          </div>
+          <button class="calc-btn" onclick="checkLeverCalc()">احسب ✓</button>
+          <div class="calc-answer" id="lCalcAns"></div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">٣. من خلال تجربتك على الترجيحة اليوم — هل لاحظتَ يوماً أنك لا تستطيع الجلوس في أي مكان لتتوازن مع شخص أثقل جداً؟ لماذا يحدث ذلك؟</div>
+        <textarea class="q-input" rows="3" placeholder="اكتب ملاحظتك وحاول تفسيرها بالقانون..."></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PULLEY -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon orange">🎡</div>
+      <div class="section-num">٣</div>
+      <div>
+        <div class="section-title">الجزء الثالث: البكرات والمحاكاة</div>
+        <div class="section-desc">اكتشف قوة البكرات!</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <span class="step-badge">خطوة ٣ من ٤ — التطبيق</span>
+
+      <div class="info-box">
+        <div class="info-title">📖 أنواع البكرات</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:10px;">
+          <div style="background:#e6f4fb; border-radius:10px; padding:14px; border:1.5px solid #bfdbf7;">
+            <div style="font-weight:800; color:var(--primary); margin-bottom:6px;">🎡 البكرة الثابتة</div>
+            <div style="font-size:13px; color:#374151; line-height:1.6;">تغير <strong>اتجاه</strong> القوة فقط.<br>القوة المبذولة = وزن الحمل.<br>مثال: رفع العلم.</div>
+          </div>
+          <div style="background:#e6f7f2; border-radius:10px; padding:14px; border:1.5px solid #a7f3d0;">
+            <div style="font-weight:800; color:#065f46; margin-bottom:6px;">🔄 البكرة المتحركة</div>
+            <div style="font-size:13px; color:#374151; line-height:1.6;">تقلل القوة إلى <strong>النصف</strong>.<br>القوة = وزن الحمل ÷ 2.<br>مثال: رافعة البناء.</div>
+          </div>
+        </div>
+        <div class="formula-box" style="margin-top:14px;">
+          <div class="formula-label">قانون البكرة المتحركة</div>
+          <div class="formula-text">القوة = الحمل ÷ عدد الحبال الحاملة</div>
+        </div>
+      </div>
+
+      <!-- PULLEY SIMULATION -->
+      <div class="pulley-sim">
+        <div class="sim-title">🎒 محاكاة رفع الحقيبة إلى الطابق العلوي — اختر الطريقة الأسهل!</div>
+        <div style="background:#e6f7f2;border:1.5px solid #a7f3d0;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#065f46;font-weight:600;">
+          🏫 <strong>الموقف:</strong> أحمد يريد رفع حقيبة كتبه الثقيلة من أمام المدرسة إلى غرفته في الطابق الثاني! ساعده يختار أفضل نوع بكرة.
+        </div>
+        <div style="display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap;">
+          <button class="option-btn" id="pFixed" onclick="setPulleyType('fixed')" style="flex:1; border-color:var(--primary); background:var(--primary-light);">🎡 بكرة ثابتة<br><span style="font-size:11px;font-weight:400;">(مثل حبل العلم)</span></button>
+          <button class="option-btn" id="pMoving" onclick="setPulleyType('moving')" style="flex:1;">🔄 بكرة متحركة<br><span style="font-size:11px;font-weight:400;">(قوة أقل بالنصف)</span></button>
+          <button class="option-btn" id="pCompound" onclick="setPulleyType('compound')" style="flex:1;">⚙️ بكرة مركبة<br><span style="font-size:11px;font-weight:400;">(أقل جهد ممكن)</span></button>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="pulleyCanvas" width="680" height="280"></canvas>
+        </div>
+        <div class="sim-controls">
+          <div class="ctrl-group">
+            <label>🎒 وزن حقيبة الكتب</label>
+            <input type="range" id="pWeight" min="50" max="300" value="120" step="10" oninput="updatePulley()">
+            <div class="ctrl-val"><span id="pWeightVal">120</span> نيوتن</div>
+          </div>
+          <div class="ctrl-group" style="display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;">
+              <div style="font-size:13px;font-weight:700;color:var(--muted);">💪 قوة أحمد اللازمة</div>
+              <div style="font-size:32px;font-weight:900;color:var(--primary);" id="pForceNeeded">120</div>
+              <div style="font-size:12px;color:var(--muted);">نيوتن</div>
+            </div>
+          </div>
+        </div>
+        <div id="pulleyExplain" style="background:#f0f7ff;border:1.5px solid #bfdbf7;border-radius:10px;padding:14px;font-size:14px;color:#1e3a5f;font-weight:600;margin-top:10px;">
+          🎡 البكرة الثابتة: أحمد يسحب الحبل للأسفل بدلاً من الرفع — أسهل في الاتجاه لكن القوة نفسها!
+        </div>
+      </div>
+
+      <!-- PULLEY QUESTIONS -->
+      <div class="q-item">
+        <div class="q-text">٤. جرّب الأنواع الثلاثة في المحاكاة مع حقيبة وزنها 120 نيوتن. أيّ نوع يجعل أحمد يبذل أقل جهد لرفع حقيبته؟</div>
+        <div class="options-grid">
+          <button class="option-btn" onclick="checkOpt(this,'pq1','wrong')">البكرة الثابتة</button>
+          <button class="option-btn" onclick="checkOpt(this,'pq1','wrong')">البكرة المتحركة</button>
+          <button class="option-btn" onclick="checkOpt(this,'pq1','correct')">البكرة المركبة</button>
+          <button class="option-btn" onclick="checkOpt(this,'pq1','wrong')">كلها متساوية</button>
+        </div>
+        <div id="pq1_fb" class="feedback-text" style="display:none;"></div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">٥. حقيبة أحمد وزنها 120 نيوتن. إذا استخدم بكرة متحركة، ما القوة الّتي سيبذلها فقط لرفعها؟</div>
+        <div class="calc-tool">
+          <div class="calc-title">🔢 احسب: قوة أحمد = وزن الحقيبة ÷ 2</div>
+          <div class="calc-row">
+            <span class="calc-label">وزن الحقيبة:</span>
+            <input class="calc-input" value="120" readonly> نيوتن
+            <span class="calc-label">÷ 2 =</span>
+            <input class="calc-input" id="pCalcAns" type="number" placeholder="؟" min="0"> نيوتن
+          </div>
+          <button class="calc-btn" onclick="checkPulleyCalc()">تحقق ✓</button>
+          <div class="calc-answer" id="pCalcResult"></div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">٦. البكرة الثابتة لا تقلل القوة لكنها تغير الاتجاه. لماذا قد يفضّل أحمد سحب الحبل للأسفل بدلاً من رفع الحقيبة مباشرةً بيده؟</div>
+        <textarea class="q-input" rows="3" placeholder="فكّر: أيهما أسهل على جسمك — الدفع للأسفل أم الشد للأعلى؟ وكيف يساعد وزن جسمك؟"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: DESIGN CHALLENGE -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon purple">🚀</div>
+      <div class="section-num">٤</div>
+      <div>
+        <div class="section-title">الجزء الرابع: تحدي التصميم الإبداعي</div>
+        <div class="section-desc">طبّق ما تعلمته في مشكلة واقعية</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <span class="step-badge">خطوة ٤ من ٤ — الإبداع والتطبيق</span>
+
+      <div class="activity-box">
+        <div class="activity-title">🏗️ سيناريو: مشروع البناء</div>
+        <p>أنتَ مهندس شاب! تحتاج لرفع مواد بناء وزنها 200 نيوتن إلى ارتفاع 4 أمتار. لديك:</p>
+        <ul style="margin-top:8px; font-size:14px; color:#78350f;">
+          <li>✅ حبال وبكرات من جميع الأنواع</li>
+          <li>✅ عمال يستطيع كل منهم بذل قوة 50 نيوتن كحد أقصى</li>
+          <li>✅ خشب لصنع رافعات</li>
+        </ul>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">٧. خطة الحل: اختر الآلة المناسبة وبيّن كيف تحسب القوة المطلوبة.</div>
+        <textarea class="q-input" rows="4" placeholder="مثال: سأستخدم بكرة مركبة بـ 4 حبال، لأن القوة = 200 ÷ 4 = 50 نيوتن. هذا يناسب قدرة العامل الواحد..."></textarea>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">٨. كم عدد العمال الأقل الذين يحتاجهم المشروع باستخدام بكرة متحركة؟ اشرح حسابك.</div>
+        <div class="calc-tool">
+          <div class="calc-title">🔢 احسب: القوة ببكرة متحركة = 200 ÷ 2 = ؟ نيوتن، وكل عامل يبذل 50 نيوتن</div>
+          <div class="calc-row">
+            <span class="calc-label">القوة بالبكرة المتحركة:</span>
+            <input class="calc-input" id="dc1" type="number" placeholder="؟"> نيوتن
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">عدد العمال المطلوب:</span>
+            <input class="calc-input" id="dc2" type="number" placeholder="؟"> عمال
+          </div>
+          <button class="calc-btn" onclick="checkDesignCalc()">تحقق ✓</button>
+          <div class="calc-answer" id="dcResult"></div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">٩. ⭐ سؤال الإبداع: هل يمكنك تصميم نظام يحتاج فيه عامل واحد فقط لرفع الحمل؟ اشرح فكرتك.</div>
+        <textarea class="q-input" rows="4" placeholder="فكر بحرية! يمكنك الجمع بين رافعة وبكرة..."></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUBRIC -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon gold">📊</div>
+      <div>
+        <div class="section-title">معيار التقييم — الروبريك</div>
+        <div class="section-desc">كيف ستُقيَّم مهمتك؟</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div style="overflow-x:auto;">
+        <table class="rubric-table">
+          <thead>
+            <tr>
+              <th style="width:22%;">المعيار</th>
+              <th style="width:8%;"><div class="score-badge s4" style="display:flex;margin:auto;">4</div><br>ممتاز</th>
+              <th style="width:8%;"><div class="score-badge s3" style="display:flex;margin:auto;">3</div><br>جيد جداً</th>
+              <th style="width:8%;"><div class="score-badge s2" style="display:flex;margin:auto;">2</div><br>جيد</th>
+              <th style="width:8%;"><div class="score-badge s1" style="display:flex;margin:auto;">1</div><br>يحتاج تحسين</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="crit-name">⚖️ تطبيق قانون الرافعات</span></td>
+              <td>يطبّق القانون بدقة تامة ويشرح خطواته</td>
+              <td>يطبّق القانون بأخطاء بسيطة</td>
+              <td>يطبّق جزئياً مع مساعدة</td>
+              <td>لا يتمكن من التطبيق</td>
+            </tr>
+            <tr>
+              <td><span class="crit-name">🎡 فهم البكرات</span></td>
+              <td>يميّز الأنواع ويحسب القوة بدقة</td>
+              <td>يميّز الأنواع مع خطأ في الحساب</td>
+              <td>يميّز نوعاً أو نوعين فقط</td>
+              <td>خلط بين الأنواع</td>
+            </tr>
+            <tr>
+              <td><span class="crit-name">🏗️ تحدي التصميم</span></td>
+              <td>حل مبتكر مع تبرير واضح ورياضي</td>
+              <td>حل صحيح دون تبرير كافٍ</td>
+              <td>حل جزئي مع أخطاء</td>
+              <td>لم يتمكن من الحل</td>
+            </tr>
+            <tr>
+              <td><span class="crit-name">🌟 الإبداع والتأمل</span></td>
+              <td>تأمل عميق وأفكار إبداعية أصيلة</td>
+              <td>تأمل جيد مع بعض الأفكار</td>
+              <td>تأمل سطحي</td>
+              <td>لم يكتمل التأمل</td>
+            </tr>
+            <tr>
+              <td><span class="crit-name">📝 الوضوح والترتيب</span></td>
+              <td>إجابات واضحة ومنظمة ومرتبة</td>
+              <td>إجابات واضحة نسبياً</td>
+              <td>بعض التشويش في التنظيم</td>
+              <td>غير منظم وصعب القراءة</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:16px; background:#f0f7ff; border-radius:10px; padding:14px; font-size:14px; color:var(--primary); font-weight:700;">
+        📊 الدرجة الكلية: 20 درجة (كل معيار من 4 درجات × 5 معايير)
+      </div>
+    </div>
+  </section>
+
+  <!-- REFLECTION -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-icon purple">💭</div>
+      <div>
+        <div class="section-title">التأمل الذاتي</div>
+        <div class="section-desc">ما الذي تعلمته اليوم؟</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div style="margin-bottom:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:12px;">😊 كيف تقيّم تجربتك في هذه المهمة؟</div>
+        <div class="reflect-face-row">
+          <button class="face-btn" onclick="selectFace(this,'😩')" title="صعبة جداً">😩<div class="face-label">صعبة جداً</div></button>
+          <button class="face-btn" onclick="selectFace(this,'😕')" title="صعبة بعض الشيء">😕<div class="face-label">صعبة بعض الشيء</div></button>
+          <button class="face-btn" onclick="selectFace(this,'😐')" title="عادي">😐<div class="face-label">عادي</div></button>
+          <button class="face-btn" onclick="selectFace(this,'😊')" title="سهلة ومفيدة">😊<div class="face-label">سهلة ومفيدة</div></button>
+          <button class="face-btn" onclick="selectFace(this,'🤩')" title="ممتعة جداً">🤩<div class="face-label">ممتعة جداً</div></button>
+        </div>
+      </div>
+
+      <div class="reflect-grid">
+        <div class="q-item" style="margin-bottom:0;">
+          <div class="q-text">🌟 أهم شيء تعلمته اليوم</div>
+          <textarea class="q-input" rows="3" placeholder="اكتب هنا..."></textarea>
+        </div>
+        <div class="q-item" style="margin-bottom:0;">
+          <div class="q-text">🤔 شيء لا تزال تحتاج لفهمه أكثر</div>
+          <textarea class="q-input" rows="3" placeholder="اكتب هنا..."></textarea>
+        </div>
+      </div>
+
+      <div class="q-item" style="margin-top:14px;">
+        <div class="q-text">💡 كيف يمكن تطبيق ما تعلمته في حياتك اليومية؟ (اذكر مثالاً من بيتك أو مدرستك)</div>
+        <textarea class="q-input" rows="3" placeholder="اكتب هنا..."></textarea>
+      </div>
+
+      <div style="margin-top:20px; background:#f8fafc; border-radius:12px; padding:16px; border:1.5px solid #e2e8f0;">
+        <div style="font-size:14px; font-weight:700; margin-bottom:12px; color:var(--text);">✅ قائمة التحقق — هل أكملتَ كل شيء؟</div>
+        <label class="check-row"><input type="checkbox"> أجبتُ على جميع الأسئلة</label>
+        <label class="check-row"><input type="checkbox"> جرّبتُ المحاكاتَ التفاعلية وفهمتُ النتائج</label>
+        <label class="check-row"><input type="checkbox"> طبّقتُ قانون الرافعات على الأقل مرة واحدة</label>
+        <label class="check-row"><input type="checkbox"> ميّزتُ بين أنواع البكرات وحسبتُ القوة</label>
+        <label class="check-row"><input type="checkbox"> أكملتُ تحدي التصميم</label>
+        <label class="check-row"><input type="checkbox"> كتبتُ تأملي الذاتي بصدق</label>
+      </div>
+
+      <!-- NAME INPUT + DOWNLOAD CARD -->
+      <div style="margin-top:28px; background:linear-gradient(135deg,#f0f7ff,#e6f7f2); border:2px solid #93c5fd; border-radius:18px; padding:28px 24px;">
+        <div style="text-align:center; margin-bottom:20px;">
+          <div style="font-size:22px; font-weight:900; color:#0f4c75; margin-bottom:6px;">🏆 احصل على بطاقة تقييمك!</div>
+          <div style="font-size:14px; color:#64748b; font-weight:500;">أدخل اسمك لنُصدر لك بطاقة تقييم خاصة بك</div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; justify-content:center; margin-bottom:20px;">
+          <input id="studentName" type="text" placeholder="✏️ اكتب اسمك الكامل هنا..." style="flex:1; min-width:220px; max-width:380px; border:2px solid #93c5fd; border-radius:12px; padding:14px 18px; font-family:inherit; font-size:16px; font-weight:700; color:#1e293b; background:white; direction:rtl; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='#1a6b9a'" onblur="this.style.borderColor='#93c5fd'">
+        </div>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button class="dl-btn" id="dlImgBtn" onclick="generateCard('img')" style="background:linear-gradient(135deg,#0f4c75,#1b8ca1);">
+            🖼️ تحميل كصورة PNG
+          </button>
+          <button class="dl-btn" id="dlPdfBtn" onclick="generateCard('pdf')" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">
+            📄 تحميل كـ PDF
+          </button>
+        </div>
+        <div id="nameError" style="text-align:center; color:#dc2626; font-weight:700; font-size:14px; margin-top:10px; display:none;">⚠️ الرجاء كتابة اسمك الكامل أولاً!</div>
+      </div>
+
+      <!-- HIDDEN CARD CANVAS -->
+      <canvas id="cardCanvas" width="900" height="620" style="display:none;"></canvas>
+    </div>
+  </section>
+
+</main>
+
+<script>
+// ===== DRAG & DROP =====
+let draggedItem = null;
+const dropZones = document.querySelectorAll('.drop-zone');
+const dragItems = document.querySelectorAll('.drag-item');
+
+dragItems.forEach(item => {
+  item.addEventListener('dragstart', e => {
+    draggedItem = item;
+    setTimeout(() => item.classList.add('dragging'), 0);
+  });
+  item.addEventListener('dragend', () => { item.classList.remove('dragging'); draggedItem = null; });
+});
+
+dropZones.forEach(zone => {
+  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('over'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('over'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault();
+    zone.classList.remove('over');
+    if (draggedItem) {
+      zone.textContent = draggedItem.dataset.val;
+      zone.dataset.placed = draggedItem.dataset.val;
+      zone.classList.remove('filled','wrong-fill');
+    }
+  });
+});
+
+function checkMatch() {
+  let correct = 0;
+  dropZones.forEach(zone => {
+    zone.classList.remove('filled','wrong-fill');
+    if (zone.dataset.placed === zone.dataset.ans) { zone.classList.add('filled'); correct++; }
+    else if (zone.dataset.placed) { zone.classList.add('wrong-fill'); }
+  });
+  const r = document.getElementById('matchResult');
+  if (correct === 4) r.innerHTML = '<span style="color:#065f46;background:#d1fae5;padding:8px 16px;border-radius:8px;display:inline-block;">🎉 ممتاز! كل الإجابات صحيحة!</span>';
+  else r.innerHTML = `<span style="color:#92400e;background:#fef3c7;padding:8px 16px;border-radius:8px;display:inline-block;">حاول مرة أخرى — أصبتَ ${correct} من 4 ✏️</span>`;
+}
+
+// ===== OPTION BUTTONS =====
+function checkOpt(btn, qid, res) {
+  const group = btn.closest('.q-item').querySelectorAll('.option-btn');
+  group.forEach(b => b.classList.remove('correct','wrong','reveal'));
+  const fb = document.getElementById(qid+'_fb');
+  if (res === 'correct') {
+    btn.classList.add('correct');
+    fb.className = 'feedback-text ok'; fb.textContent = '✅ إجابة صحيحة! أحسنتَ!'; fb.style.display='block';
+  } else {
+    btn.classList.add('wrong');
+    group.forEach(b => { if (b !== btn && b.onclick.toString().includes("'correct'")) b.classList.add('reveal'); });
+    fb.className = 'feedback-text err'; fb.textContent = '❌ حاول مرة أخرى! الإجابة الصحيحة مُعلَّمة باللون الأخضر.'; fb.style.display='block';
+  }
+}
+
+// ===== LEVER SIMULATION (SEESAW) =====
+const lc = document.getElementById('leverCanvas');
+const lctx = lc.getContext('2d');
+let leverState = { d1:3, d2:2, f2:400 };
+
+function updateLever() {
+  leverState.d1 = parseFloat(document.getElementById('d1Lever').value);
+  leverState.d2 = parseFloat(document.getElementById('d2Lever').value);
+  leverState.f2 = parseFloat(document.getElementById('f2Lever').value);
+  document.getElementById('d1Val').textContent = leverState.d1.toFixed(1);
+  document.getElementById('d2Val').textContent = leverState.d2.toFixed(1);
+  document.getElementById('f2Val').textContent = leverState.f2.toFixed(0);
+  const f1 = (leverState.f2 * leverState.d2) / leverState.d1;
+  const m1 = (f1 * leverState.d1).toFixed(0);
+  const m2 = (leverState.f2 * leverState.d2).toFixed(0);
+  document.getElementById('f1Res').textContent = f1.toFixed(0);
+  document.getElementById('m1Res').textContent = m1;
+  document.getElementById('m2Res').textContent = m2;
+  const tag = document.getElementById('balanceTag');
+  const diff = Math.abs(f1 * leverState.d1 - leverState.f2 * leverState.d2);
+  tag.textContent = '⚖️ متزنة'; tag.style.background = '#d1fae5'; tag.style.color = '#065f46';
+  const tip = document.getElementById('leverTip');
+  if (f1 < 200) tip.innerHTML = '✅ رائع! أنت أخف وزناً لكنك جلستَ أبعد — هذا يجعلكما متوازنَين تماماً!';
+  else if (f1 > 500) tip.innerHTML = '⚠️ أنت تجلس قريباً جداً من المنتصف — حاول الابتعاد أكثر لتتوازنا!';
+  else tip.innerHTML = `💡 وزنك اللازم للتوازن هو ${f1.toFixed(0)} نيوتن — كلما ابتعدتَ أكثر، تحتاج وزناً أقل!`;
+  drawSeesaw(leverState.d1, leverState.d2, f1, leverState.f2);
+}
+
+function drawSeesaw(d1, d2, f1, f2) {
+  const w = lc.width, h = lc.height;
+  lctx.clearRect(0, 0, w, h);
+
+  // Sky gradient
+  const skyGrad = lctx.createLinearGradient(0,0,0,h);
+  skyGrad.addColorStop(0,'#bae6fd'); skyGrad.addColorStop(1,'#f0f9ff');
+  lctx.fillStyle = skyGrad; lctx.fillRect(0,0,w,h);
+
+  // Clouds
+  function drawCloud(cx,cy,r){
+    lctx.fillStyle='rgba(255,255,255,0.85)';
+    [[0,0,r],[r*0.6,-r*0.4,r*0.7],[r*1.2,0,r*0.8],[-r*0.6,-r*0.3,r*0.65]].forEach(([dx,dy,cr])=>{
+      lctx.beginPath(); lctx.arc(cx+dx,cy+dy,cr,0,Math.PI*2); lctx.fill();
+    });
+  }
+  drawCloud(100,45,18); drawCloud(550,30,22); drawCloud(420,55,15);
+
+  // Sun
+  lctx.fillStyle='#fef08a'; lctx.beginPath(); lctx.arc(50,44,20,0,Math.PI*2); lctx.fill();
+  lctx.strokeStyle='#fbbf24'; lctx.lineWidth=2.5;
+  for(let a=0;a<8;a++){
+    const ang=a*Math.PI/4; lctx.beginPath();
+    lctx.moveTo(50+Math.cos(ang)*22,44+Math.sin(ang)*22);
+    lctx.lineTo(50+Math.cos(ang)*30,44+Math.sin(ang)*30); lctx.stroke();
+  }
+
+  // School building (right background)
+  lctx.fillStyle='#dbeafe'; lctx.fillRect(w-110,h-130,100,104);
+  lctx.fillStyle='#93c5fd'; lctx.fillRect(w-100,h-170,80,44); // roof triangle base
+  lctx.fillStyle='#2563eb';
+  lctx.beginPath(); lctx.moveTo(w-110,h-130); lctx.lineTo(w-60,h-185); lctx.lineTo(w-10,h-130); lctx.closePath(); lctx.fill();
+  // windows
+  [[w-92,h-120],[w-68,h-120],[w-92,h-96],[w-68,h-96]].forEach(([wx,wy])=>{
+    lctx.fillStyle='#bfdbfe'; lctx.fillRect(wx,wy,18,16);
+    lctx.strokeStyle='#60a5fa'; lctx.lineWidth=1; lctx.strokeRect(wx,wy,18,16);
+    lctx.beginPath(); lctx.moveTo(wx+9,wy); lctx.lineTo(wx+9,wy+16); lctx.stroke();
+    lctx.beginPath(); lctx.moveTo(wx,wy+8); lctx.lineTo(wx+18,wy+8); lctx.stroke();
+  });
+  // door
+  lctx.fillStyle='#1d4ed8'; lctx.fillRect(w-72,h-50,24,22);
+  lctx.fillStyle='#93c5fd'; lctx.beginPath(); lctx.arc(w-60,h-50,12,Math.PI,0); lctx.fill();
+  lctx.fillStyle='#94a3b8'; lctx.font='bold 11px Cairo'; lctx.textAlign='center';
+  lctx.fillText('مدرستنا',w-60,h-38);
+
+  // Flag pole left
+  lctx.strokeStyle='#64748b'; lctx.lineWidth=3;
+  lctx.beginPath(); lctx.moveTo(22,h-28); lctx.lineTo(22,h-120); lctx.stroke();
+  lctx.fillStyle='#ef4444'; lctx.fillRect(22,h-120,28,18);
+  lctx.fillStyle='#16a34a'; lctx.fillRect(22,h-102,28,9);
+  lctx.fillStyle='#000'; lctx.fillRect(22,h-93,28,4);
+
+  // Ground — grass
+  lctx.fillStyle='#4ade80'; lctx.fillRect(0,h-28,w,28);
+  lctx.fillStyle='#16a34a';
+  for(let gx=0;gx<w;gx+=14){
+    lctx.beginPath(); lctx.moveTo(gx,h-28); lctx.lineTo(gx+4,h-36); lctx.lineTo(gx+8,h-28); lctx.fill();
+  }
+  // Path / sand under seesaw
+  lctx.fillStyle='#fde68a';
+  lctx.beginPath(); lctx.ellipse(w/2,h-20,110,14,0,0,Math.PI*2); lctx.fill();
+
+  const cx = w/2, groundY = h - 28;
+  const maxD = 4, scale = 108 / maxD;
+  const boardY = groundY - 66;
+  const tilt = (f2*d2 - f1*d1) / ((f2*d2 + f1*d1)||1) * 14;
+
+  // Fulcrum
+  lctx.fillStyle='#7c3aed';
+  lctx.beginPath(); lctx.moveTo(cx,boardY+8); lctx.lineTo(cx-20,groundY); lctx.lineTo(cx+20,groundY); lctx.closePath(); lctx.fill();
+  lctx.fillStyle='#5b21b6'; lctx.fillRect(cx-30,groundY-2,60,8);
+  lctx.fillStyle='#c4b5fd'; lctx.beginPath(); lctx.arc(cx,boardY+8,7,0,Math.PI*2); lctx.fill();
+  lctx.strokeStyle='#7c3aed'; lctx.lineWidth=2; lctx.beginPath(); lctx.arc(cx,boardY+8,7,0,Math.PI*2); lctx.stroke();
+
+  // Seesaw board (tilted)
+  lctx.save(); lctx.translate(cx, boardY+8); lctx.rotate(tilt*Math.PI/180);
+  const bLen = Math.max(d1,d2)*scale + 30;
+  // Wood plank
+  lctx.fillStyle='#a16207'; lctx.fillRect(-bLen,-12,bLen*2,12);
+  lctx.fillStyle='#ca8a04'; lctx.fillRect(-bLen,-12,bLen*2,4);
+  // Plank grain lines
+  lctx.strokeStyle='#92400e'; lctx.lineWidth=0.8;
+  for(let gx=-bLen+20;gx<bLen;gx+=28){ lctx.beginPath(); lctx.moveTo(gx,-12); lctx.lineTo(gx+6,-1); lctx.stroke(); }
+  // End stoppers
+  lctx.fillStyle='#78350f'; lctx.fillRect(-bLen-4,-14,6,14); lctx.fillRect(bLen-2,-14,6,14);
+
+  // Kids (sitting on plank)
+  drawKidSitting(lctx, -d1*scale, -12, '#1d4ed8', '#bfdbfe', f1.toFixed(0), 'أنت 🧒');
+  drawKidSitting(lctx, d2*scale, -12, '#dc2626', '#fee2e2', f2.toFixed(0), 'صديقك 👦');
+
+  lctx.restore();
+
+  // Distance arrows below board
+  const arrowY = boardY + 28;
+  drawDistArrow(lctx, cx, cx - d1*scale, arrowY, '#1d4ed8', `${d1.toFixed(1)} م`);
+  drawDistArrow(lctx, cx, cx + d2*scale, arrowY, '#dc2626', `${d2.toFixed(1)} م`);
+
+  // Balance equation pill
+  const balanced = Math.abs(f1*d1 - f2*d2) < 5;
+  lctx.fillStyle = balanced ? '#d1fae5' : '#fef3c7';
+  lctx.strokeStyle = balanced ? '#10b981' : '#d97706'; lctx.lineWidth = 1.5;
+  lctx.beginPath(); roundRect(lctx, cx-130, groundY-16, 260, 22, 8); lctx.fill(); lctx.stroke();
+  lctx.fillStyle = balanced ? '#065f46' : '#92400e';
+  lctx.font = 'bold 12px Cairo'; lctx.textAlign='center';
+  lctx.fillText(`${f1.toFixed(0)} × ${d1.toFixed(1)} ${balanced?'=':'≠'} ${f2.toFixed(0)} × ${d2.toFixed(1)}  ${balanced?'⚖️ متزنة!':''}`, cx, groundY-2);
+}
+
+function drawKidSitting(ctx, x, y, bodyColor, shirtColor, weightTxt, label) {
+  ctx.save();
+  // Shirt / torso
+  ctx.fillStyle = shirtColor;
+  ctx.beginPath(); ctx.ellipse(x, y-22, 10, 14, 0, 0, Math.PI*2); ctx.fill();
+  ctx.strokeStyle = bodyColor; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.ellipse(x, y-22, 10, 14, 0, 0, Math.PI*2); ctx.stroke();
+  // Head
+  ctx.fillStyle = '#fde68a'; ctx.beginPath(); ctx.arc(x, y-38, 9, 0, Math.PI*2); ctx.fill();
+  ctx.strokeStyle = bodyColor; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(x, y-38, 9, 0, Math.PI*2); ctx.stroke();
+  // Face (eyes + smile)
+  ctx.fillStyle = '#1e293b';
+  ctx.beginPath(); ctx.arc(x-3, y-40, 1.5, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(x+3, y-40, 1.5, 0, Math.PI*2); ctx.fill();
+  ctx.strokeStyle='#1e293b'; ctx.lineWidth=1.2;
+  ctx.beginPath(); ctx.arc(x, y-36, 3, 0.2, Math.PI-0.2); ctx.stroke();
+  // Arms
+  ctx.strokeStyle = bodyColor; ctx.lineWidth = 2.5; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(x-10,y-24); ctx.lineTo(x-18,y-16); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(x+10,y-24); ctx.lineTo(x+18,y-16); ctx.stroke();
+  // Legs (bent, sitting)
+  ctx.beginPath(); ctx.moveTo(x-5,y-10); ctx.lineTo(x-14,y-4); ctx.lineTo(x-20,y); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(x+5,y-10); ctx.lineTo(x+14,y-4); ctx.lineTo(x+20,y); ctx.stroke();
+  // Hair
+  ctx.fillStyle = bodyColor;
+  ctx.beginPath(); ctx.ellipse(x, y-45, 9, 5, 0, Math.PI, 0); ctx.fill();
+  // Weight bubble
+  ctx.fillStyle = bodyColor; ctx.globalAlpha = 0.15;
+  ctx.beginPath(); ctx.ellipse(x,y-53,18,9,0,0,Math.PI*2); ctx.fill();
+  ctx.globalAlpha = 1;
+  ctx.fillStyle = bodyColor; ctx.font = 'bold 10px Cairo'; ctx.textAlign='center';
+  ctx.fillText(weightTxt+'N', x, y-49);
+  // Name label
+  ctx.fillStyle = '#374151'; ctx.font = '9px Cairo';
+  ctx.fillText(label, x, y-60);
+  ctx.restore();
+}
+
+function drawDistArrow(ctx, x1, x2, y, color, label) {
+  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 1.5;
+  const mn = Math.min(x1,x2), mx = Math.max(x1,x2);
+  ctx.beginPath(); ctx.moveTo(mn+5,y); ctx.lineTo(mx-5,y); ctx.stroke();
+  // Arrowheads
+  ctx.beginPath(); ctx.moveTo(mn,y); ctx.lineTo(mn+8,y-4); ctx.lineTo(mn+8,y+4); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(mx,y); ctx.lineTo(mx-8,y-4); ctx.lineTo(mx-8,y+4); ctx.closePath(); ctx.fill();
+  ctx.font = 'bold 11px Cairo'; ctx.textAlign='center';
+  ctx.fillText(label, (x1+x2)/2, y-5);
+}
+
+
+
+// ===== PULLEY SIMULATION =====
+const pc = document.getElementById('pulleyCanvas');
+const pctx = pc.getContext('2d');
+let pulleyType = 'fixed';
+
+function setPulleyType(type) {
+  pulleyType = type;
+  document.querySelectorAll('#pFixed,#pMoving,#pCompound').forEach(b => {
+    b.style.borderColor = 'var(--border)'; b.style.background = 'white';
+  });
+  const sel = {fixed:'pFixed',moving:'pMoving',compound:'pCompound'}[type];
+  document.getElementById(sel).style.borderColor = 'var(--primary)';
+  document.getElementById(sel).style.background = 'var(--primary-light)';
+  updatePulley();
+}
+
+function updatePulley() {
+  const w = parseFloat(document.getElementById('pWeight').value);
+  document.getElementById('pWeightVal').textContent = w;
+  let force, ropes, explain;
+  if (pulleyType === 'fixed') { force = w; ropes = 1; explain = '🎡 البكرة الثابتة: تغير اتجاه القوة فقط — تحتاج قوة مساوية لوزن الحمل تماماً.'; }
+  else if (pulleyType === 'moving') { force = w/2; ropes = 2; explain = '🔄 البكرة المتحركة: القوة = الحمل ÷ 2. توفّر نصف الجهد! رائع جداً.'; }
+  else { force = w/4; ropes = 4; explain = '⚙️ البكرة المركبة: القوة = الحمل ÷ 4. أقوى آلة — أقل جهد ممكن!'; }
+  document.getElementById('pForceNeeded').textContent = force.toFixed(1);
+  document.getElementById('pulleyExplain').textContent = explain;
+  drawPulley(pulleyType, w, force, ropes);
+}
+
+function drawPulley(type, weight, force, ropes) {
+  const w = pc.width, h = pc.height;
+  pctx.clearRect(0, 0, w, h);
+
+  // Sky
+  const skyG = pctx.createLinearGradient(0,0,0,h);
+  skyG.addColorStop(0,'#bae6fd'); skyG.addColorStop(1,'#f0f9ff');
+  pctx.fillStyle = skyG; pctx.fillRect(0,0,w,h);
+
+  // School building facade (fills right half of canvas)
+  const bldX = 200, bldW = w - bldX;
+
+  // Main wall
+  pctx.fillStyle = '#e2e8f0'; pctx.fillRect(bldX, 0, bldW, h);
+  // Brick texture
+  pctx.strokeStyle = '#cbd5e1'; pctx.lineWidth = 0.7;
+  for(let row=0; row<h; row+=14){
+    const offset = (Math.floor(row/14)%2)*22;
+    for(let col=-22+offset; col<bldW; col+=44){
+      pctx.strokeRect(bldX+col, row, 44, 14);
+    }
+  }
+
+  // Floor line (second floor at h/2)
+  const floorY = Math.round(h * 0.48);
+  pctx.fillStyle = '#94a3b8'; pctx.fillRect(bldX, floorY-4, bldW, 8);
+  pctx.fillStyle = '#64748b'; pctx.font = 'bold 11px Cairo'; pctx.textAlign = 'right';
+  pctx.fillText('الطابق الثاني ▲', bldX-6, floorY-8);
+  pctx.fillText('الطابق الأول ▼', bldX-6, floorY+18);
+
+  // Windows — 2nd floor
+  [[bldX+30, floorY-80],[bldX+120, floorY-80]].forEach(([wx,wy])=>{
+    pctx.fillStyle='#bfdbfe'; pctx.fillRect(wx,wy,54,40);
+    pctx.strokeStyle='#3b82f6'; pctx.lineWidth=2; pctx.strokeRect(wx,wy,54,40);
+    pctx.beginPath(); pctx.moveTo(wx+27,wy); pctx.lineTo(wx+27,wy+40); pctx.stroke();
+    pctx.beginPath(); pctx.moveTo(wx,wy+20); pctx.lineTo(wx+54,wy+20); pctx.stroke();
+    // Windowsill
+    pctx.fillStyle='#64748b'; pctx.fillRect(wx-3,wy+40,60,5);
+  });
+  // Windows — 1st floor
+  [[bldX+30, floorY+28],[bldX+120, floorY+28]].forEach(([wx,wy])=>{
+    pctx.fillStyle='#bfdbfe'; pctx.fillRect(wx,wy,54,40);
+    pctx.strokeStyle='#3b82f6'; pctx.lineWidth=2; pctx.strokeRect(wx,wy,54,40);
+    pctx.beginPath(); pctx.moveTo(wx+27,wy); pctx.lineTo(wx+27,wy+40); pctx.stroke();
+    pctx.beginPath(); pctx.moveTo(wx,wy+20); pctx.lineTo(wx+54,wy+20); pctx.stroke();
+    pctx.fillStyle='#64748b'; pctx.fillRect(wx-3,wy+40,60,5);
+  });
+
+  // Door (ground floor)
+  pctx.fillStyle='#1d4ed8'; pctx.fillRect(bldX+80, h-58, 40, 50);
+  pctx.fillStyle='#93c5fd'; pctx.beginPath(); pctx.arc(bldX+100,h-58,20,Math.PI,0); pctx.fill();
+  pctx.fillStyle='#fde68a'; pctx.beginPath(); pctx.arc(bldX+115,h-38,3,0,Math.PI*2); pctx.fill();
+  pctx.fillStyle='#1e40af'; pctx.font='bold 10px Cairo'; pctx.textAlign='center';
+  pctx.fillText('المدخل', bldX+100, h-12);
+
+  // Ground / pavement
+  pctx.fillStyle='#e5e7eb'; pctx.fillRect(0, h-20, w, 20);
+  pctx.strokeStyle='#d1d5db'; pctx.lineWidth=1;
+  for(let gx=0;gx<w;gx+=40){ pctx.beginPath(); pctx.moveTo(gx,h-20); pctx.lineTo(gx,h); pctx.stroke(); }
+
+  // Pulley anchor point on building top
+  const anchorX = bldX + 40;
+  pctx.fillStyle='#475569'; pctx.fillRect(anchorX-6, 0, 12, 22);
+  pctx.fillStyle='#64748b'; pctx.beginPath(); pctx.arc(anchorX,22,6,0,Math.PI*2); pctx.fill();
+
+  // ---- Draw scene based on type ----
+  if (type === 'fixed') {
+    // Single pulley wheel at top of building
+    drawPulleyWheel(pctx, anchorX, 46, 28, '#1a6b9a', '#e6f4fb', true);
+
+    // Rope over pulley: right side goes down to bag, left side = Ahmed pulling
+    const bagX = anchorX + 10, bagTopY = floorY + 10;
+    const ahmedX = anchorX - 60, ahmedY = h - 70;
+    // Rope segments
+    pctx.strokeStyle='#92400e'; pctx.lineWidth=4; pctx.lineCap='round';
+    pctx.beginPath(); pctx.moveTo(anchorX+12,46); pctx.lineTo(bagX, bagTopY-28); pctx.stroke();
+    pctx.beginPath(); pctx.moveTo(anchorX-12,46); pctx.lineTo(ahmedX+8, ahmedY-16); pctx.stroke();
+
+    // Bag (on 1st floor level, being pulled up)
+    drawBag(pctx, bagX-18, bagTopY-28, weight);
+
+    // Ahmed pulling down
+    drawAhmed(pctx, ahmedX, ahmedY, force, '👇 يسحب لأسفل');
+
+    // Label explaining direction change
+    pctx.fillStyle='rgba(30,58,138,0.85)'; pctx.font='bold 12px Cairo'; pctx.textAlign='center';
+    pctx.fillText('البكرة الثابتة: اتجاه القوة يتغير فقط', anchorX-30, h-10);
+    pctx.fillStyle='#dc2626'; pctx.font='bold 11px Cairo';
+    pctx.fillText(`القوة = الحمل = ${force.toFixed(0)} ن`, anchorX+50, 70);
+
+  } else if (type === 'moving') {
+    // Fixed pulley at top (on wall)
+    drawPulleyWheel(pctx, anchorX, 46, 24, '#475569', '#e2e8f0', true);
+    // Moving pulley (travels with bag, midway height)
+    const movY = floorY - 20;
+    drawPulleyWheel(pctx, anchorX+20, movY, 28, '#1a6b9a', '#dbeafe', false);
+
+    // Rope: fixed end attached to wall → around moving pulley → up to fixed pulley → down to Ahmed
+    pctx.strokeStyle='#92400e'; pctx.lineWidth=4; pctx.lineCap='round'; pctx.setLineDash([]);
+    // Rope 1: wall fixed point → moving pulley (vertical right side)
+    pctx.beginPath(); pctx.moveTo(anchorX+55, 5); pctx.lineTo(anchorX+55, movY); pctx.stroke();
+    // Under moving pulley
+    pctx.beginPath(); pctx.moveTo(anchorX+48, movY); pctx.lineTo(anchorX-8, movY); pctx.stroke();
+    // Up from moving pulley to fixed pulley
+    pctx.beginPath(); pctx.moveTo(anchorX-8, movY); pctx.lineTo(anchorX-12, 46); pctx.stroke();
+    // Fixed pulley down to Ahmed
+    pctx.beginPath(); pctx.moveTo(anchorX-24, 46); pctx.lineTo(anchorX-80, h-70); pctx.stroke();
+
+    // Bag hangs from moving pulley
+    drawBag(pctx, anchorX+8, movY+28, weight);
+    // Attachment rope
+    pctx.strokeStyle='#dc2626'; pctx.lineWidth=3;
+    pctx.beginPath(); pctx.moveTo(anchorX+20, movY+28); pctx.lineTo(anchorX+20, movY+28+16); pctx.stroke();
+
+    // Ahmed
+    drawAhmed(pctx, anchorX-90, h-70, force, `💪 ${force.toFixed(0)} ن فقط!`);
+
+    pctx.fillStyle='rgba(5,150,105,0.9)'; pctx.font='bold 12px Cairo'; pctx.textAlign='center';
+    pctx.fillText(`بكرة متحركة: القوة = ${weight}÷2 = ${force.toFixed(0)} نيوتن`, anchorX, h-8);
+
+  } else {
+    // Compound: 2 fixed + 2 moving pulleys
+    const fp1x = anchorX, fp2x = anchorX+70;
+    drawPulleyWheel(pctx, fp1x, 46, 20, '#475569', '#e2e8f0', true);
+    drawPulleyWheel(pctx, fp2x, 46, 20, '#475569', '#e2e8f0', true);
+    const mp1x = anchorX+14, mp2x = anchorX+56, mpY = floorY - 30;
+    drawPulleyWheel(pctx, mp1x, mpY, 22, '#7c3aed', '#f3eeff', false);
+    drawPulleyWheel(pctx, mp2x, mpY, 22, '#7c3aed', '#f3eeff', false);
+
+    // Ropes (simplified compound)
+    pctx.strokeStyle='#92400e'; pctx.lineWidth=3;
+    const rSegs = [
+      [anchorX+90,5, anchorX+90, mpY],[anchorX+90,mpY, mp2x+22,mpY],
+      [mp2x+22,mpY, fp2x+20,46],[fp2x-20,46, mp2x-22,mpY],
+      [mp2x-22,mpY, mp1x+22,mpY],[mp1x+22,mpY, fp1x+20,46],
+      [fp1x-20,46, mp1x-22,mpY],[mp1x-22,mpY, mp1x-40,mpY],
+      [mp1x-40,mpY, anchorX-70,h-75]
+    ];
+    rSegs.forEach(([x1,y1,x2,y2])=>{
+      pctx.beginPath(); pctx.moveTo(x1,y1); pctx.lineTo(x2,y2); pctx.stroke();
+    });
+
+    // Bag in centre
+    drawBag(pctx, (mp1x+mp2x)/2-18, mpY+28, weight);
+    pctx.strokeStyle='#dc2626'; pctx.lineWidth=2.5;
+    pctx.beginPath(); pctx.moveTo((mp1x+mp2x)/2, mpY+28); pctx.lineTo((mp1x+mp2x)/2, mpY+45); pctx.stroke();
+
+    // Ahmed
+    drawAhmed(pctx, anchorX-80, h-70, force, `🚀 ${force.toFixed(0)} ن فقط!`);
+
+    pctx.fillStyle='rgba(124,58,237,0.9)'; pctx.font='bold 12px Cairo'; pctx.textAlign='center';
+    pctx.fillText(`بكرة مركبة: القوة = ${weight}÷4 = ${force.toFixed(0)} ن — توفير 75% من الجهد!`, w/2+50, h-8);
+  }
+
+  // Left side: open sky with tree
+  // Tree
+  pctx.fillStyle='#166534'; pctx.beginPath(); pctx.arc(80, h-80, 36, 0, Math.PI*2); pctx.fill();
+  pctx.fillStyle='#14532d'; pctx.beginPath(); pctx.arc(60,h-96,22,0,Math.PI*2); pctx.fill();
+  pctx.beginPath(); pctx.arc(100,h-94,20,0,Math.PI*2); pctx.fill();
+  pctx.fillStyle='#713f12'; pctx.fillRect(74,h-50,12,30);
+}
+
+function drawPulleyWheel(ctx, cx, cy, r, strokeCol, fillCol, isFixed) {
+  // Outer ring
+  ctx.fillStyle = fillCol; ctx.strokeStyle = strokeCol; ctx.lineWidth = 4;
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill(); ctx.stroke();
+  // Groove
+  ctx.strokeStyle = strokeCol; ctx.lineWidth = 2; ctx.globalAlpha=0.4;
+  ctx.beginPath(); ctx.arc(cx,cy,r*0.72,0,Math.PI*2); ctx.stroke();
+  ctx.globalAlpha=1;
+  // Hub
+  ctx.fillStyle = strokeCol;
+  ctx.beginPath(); ctx.arc(cx,cy,r*0.22,0,Math.PI*2); ctx.fill();
+  // Spokes
+  ctx.strokeStyle = strokeCol; ctx.lineWidth=1.5; ctx.globalAlpha=0.5;
+  for(let s=0;s<4;s++){
+    const a=s*Math.PI/2;
+    ctx.beginPath(); ctx.moveTo(cx+Math.cos(a)*r*0.22,cy+Math.sin(a)*r*0.22);
+    ctx.lineTo(cx+Math.cos(a)*r*0.72,cy+Math.sin(a)*r*0.72); ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+  // Label
+  ctx.fillStyle = strokeCol; ctx.font='bold 9px Cairo'; ctx.textAlign='center';
+  ctx.fillText(isFixed?'ثابتة':'متحركة', cx, cy+r+11);
+}
+
+function drawBag(ctx, x, y, weight) {
+  // Bag body
+  ctx.fillStyle = '#1e40af'; ctx.strokeStyle='#1d4ed8'; ctx.lineWidth=2;
+  ctx.beginPath(); roundRect(ctx,x,y,36,44,6); ctx.fill(); ctx.stroke();
+  // Handle
+  ctx.strokeStyle='#3b82f6'; ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(x+8,y); ctx.quadraticCurveTo(x+18,y-14,x+28,y); ctx.stroke();
+  // Zipper
+  ctx.strokeStyle='#93c5fd'; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.moveTo(x+4,y+16); ctx.lineTo(x+32,y+16); ctx.stroke();
+  ctx.fillStyle='#fbbf24'; ctx.beginPath(); ctx.arc(x+18,y+16,3,0,Math.PI*2); ctx.fill();
+  // Pockets
+  ctx.fillStyle='rgba(255,255,255,0.12)'; ctx.fillRect(x+4,y+22,28,14);
+  // Weight label
+  ctx.fillStyle='white'; ctx.font='bold 10px Cairo'; ctx.textAlign='center';
+  ctx.fillText(weight+'N', x+18, y+34);
+  ctx.font='9px Cairo'; ctx.fillStyle='#bfdbfe';
+  ctx.fillText('حقيبة', x+18, y+44);
+}
+
+function drawAhmed(ctx, x, y, force, actionLabel) {
+  // Ahmed (the student) pulling the rope
+  // Shoes
+  ctx.fillStyle='#1e293b'; ctx.fillRect(x-6,y+38,14,6); ctx.fillRect(x+14,y+38,14,6);
+  // Pants
+  ctx.fillStyle='#1d4ed8'; ctx.fillRect(x,y+18,28,22);
+  // Shirt (school uniform — green)
+  ctx.fillStyle='#16a34a'; ctx.fillRect(x,y,30,20);
+  // Collar
+  ctx.fillStyle='white'; ctx.fillRect(x+10,y,10,8);
+  // Arms pulling
+  ctx.strokeStyle='#fde68a'; ctx.lineWidth=4; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(x,y+6); ctx.lineTo(x-14,y+18); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(x+30,y+6); ctx.lineTo(x+44,y+18); ctx.stroke();
+  // Hands
+  ctx.fillStyle='#fde68a';
+  ctx.beginPath(); ctx.arc(x-14,y+18,5,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(x+44,y+18,5,0,Math.PI*2); ctx.fill();
+  // Head
+  ctx.fillStyle='#fde68a'; ctx.beginPath(); ctx.arc(x+15,y-14,13,0,Math.PI*2); ctx.fill();
+  // Hair
+  ctx.fillStyle='#78350f'; ctx.beginPath(); ctx.ellipse(x+15,y-24,13,7,0,Math.PI,0); ctx.fill();
+  // Eyes
+  ctx.fillStyle='#1e293b'; ctx.beginPath(); ctx.arc(x+10,y-14,2,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(x+20,y-14,2,0,Math.PI*2); ctx.fill();
+  // Smile
+  ctx.strokeStyle='#1e293b'; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.arc(x+15,y-11,4,0.1,Math.PI-0.1); ctx.stroke();
+  // Name tag
+  ctx.fillStyle='#065f46'; ctx.font='bold 11px Cairo'; ctx.textAlign='center';
+  ctx.fillText('أحمد 🧒', x+15, y-32);
+  // Force bubble
+  ctx.fillStyle='rgba(26,107,154,0.15)';
+  ctx.beginPath(); ctx.ellipse(x+15,y+50,34,12,0,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle='#1a6b9a'; ctx.font='bold 10px Cairo';
+  ctx.fillText(actionLabel, x+15, y+53);
+}
+
+
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath(); ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r); ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h); ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r); ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
+}
+
+// ===== CALC CHECKS =====
+function checkLeverCalc() {
+  const ans = parseFloat(document.getElementById('lCalcD1').value);
+  const el = document.getElementById('lCalcAns');
+  el.style.display = 'block';
+  if (Math.abs(ans - 4) < 0.2) el.innerHTML = '✅ صحيح تماماً! 30 × 4 = 60 × 2 = 120 ن·م — الرافعة متزنة!';
+  else el.innerHTML = `❌ راجع حسابك: 30 × ؟ = 60 × 2 = 120، إذاً ؟ = 120 ÷ 30 = 4 متر`;
+}
+
+function checkPulleyCalc() {
+  const ans = parseFloat(document.getElementById('pCalcAns').value);
+  const el = document.getElementById('pCalcResult');
+  el.style.display = 'block';
+  if (Math.abs(ans - 60) < 2) el.innerHTML = '✅ ممتاز! 120 ÷ 2 = 60 نيوتن. البكرة المتحركة وفّرت نصف الجهد!';
+  else el.innerHTML = '❌ راجع: القوة = 120 ÷ 2 = 60 نيوتن';
+}
+
+function checkDesignCalc() {
+  const dc1 = parseFloat(document.getElementById('dc1').value);
+  const dc2 = parseFloat(document.getElementById('dc2').value);
+  const el = document.getElementById('dcResult');
+  el.style.display = 'block';
+  const ok1 = Math.abs(dc1-100) < 3;
+  const ok2 = Math.abs(dc2-2) < 1;
+  if (ok1 && ok2) el.innerHTML = '✅ رائع! القوة = 200÷2 = 100 نيوتن. يحتاج عاملَين (كل عامل 50 نيوتن)!';
+  else if (ok1) el.innerHTML = '👍 القوة صحيحة 100 نيوتن! أعد حساب عدد العمال: 100÷50 = ؟';
+  else el.innerHTML = '❌ راجع: القوة ببكرة متحركة = 200÷2 = 100 نيوتن، عدد العمال = 100÷50 = 2';
+}
+
+// ===== FACE SELECT =====
+function selectFace(btn, emoji) {
+  document.querySelectorAll('.face-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+// ===== SCORE CALCULATION =====
+function calcScore() {
+  // Count checked checkboxes
+  const checks = document.querySelectorAll('.check-row input[type=checkbox]:checked').length;
+  const total = document.querySelectorAll('.check-row input[type=checkbox]').length;
+  const checkScore = Math.round((checks / total) * 5);
+
+  // Count correct option buttons
+  let correctOpts = 0, totalOpts = 0;
+  document.querySelectorAll('.q-item').forEach(q => {
+    const btns = q.querySelectorAll('.option-btn');
+    if (btns.length > 0) {
+      totalOpts++;
+      if (q.querySelector('.option-btn.correct')) correctOpts++;
+    }
+  });
+  const optScore = totalOpts > 0 ? Math.round((correctOpts / totalOpts) * 8) : 4;
+
+  // Filled textareas
+  let filledTA = 0, totalTA = 0;
+  document.querySelectorAll('textarea.q-input').forEach(ta => {
+    totalTA++;
+    if (ta.value.trim().length > 10) filledTA++;
+  });
+  const taScore = totalTA > 0 ? Math.round((filledTA / totalTA) * 7) : 3;
+
+  const total_score = checkScore + optScore + taScore;
+  return Math.min(20, total_score);
+}
+
+function getLevel(score) {
+  if (score >= 18) return { label: 'ممتاز 🌟', color: '#065f46', bg: '#d1fae5', star: 5, msg: 'أداء استثنائي! أنت مهندس فيزياء من الطراز الأول!' };
+  if (score >= 15) return { label: 'جيد جداً ⭐', color: '#1e40af', bg: '#dbeafe', star: 4, msg: 'عمل رائع! تمكّنت من الآلات البسيطة بشكل ممتاز!' };
+  if (score >= 12) return { label: 'جيد 👍', color: '#92400e', bg: '#fef3c7', star: 3, msg: 'أداء جيد! مع مزيد من التدريب ستصل للقمة!' };
+  if (score >= 8)  return { label: 'مقبول 📚', color: '#7c3aed', bg: '#f3eeff', star: 2, msg: 'بداية جيدة! راجع الدروس وأعد المحاكاة مرة أخرى.' };
+  return { label: 'يحتاج مراجعة 💪', color: '#dc2626', bg: '#fee2e2', star: 1, msg: 'لا تستسلم! كل بداية صعبة — راجع مع معلمتك.' };
+}
+
+// ===== CARD GENERATION =====
+function generateCard(mode) {
+  const name = document.getElementById('studentName').value.trim();
+  if (!name) {
+    document.getElementById('nameError').style.display = 'block';
+    document.getElementById('studentName').focus();
+    return;
+  }
+  document.getElementById('nameError').style.display = 'none';
+
+  const score = calcScore();
+  const level = getLevel(score);
+  const today = new Date().toLocaleDateString('ar-EG', { year:'numeric', month:'long', day:'numeric' });
+
+  const canvas = document.getElementById('cardCanvas');
+  canvas.style.display = 'block';
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  // ---- BACKGROUND ----
+  const bg = ctx.createLinearGradient(0, 0, W, H);
+  bg.addColorStop(0, '#0f4c75');
+  bg.addColorStop(0.45, '#1b8ca1');
+  bg.addColorStop(1, '#065f46');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Decorative circles
+  [[W*0.9, H*0.1, 180], [W*0.05, H*0.85, 140], [W*0.5, H*0.95, 100]].forEach(([cx,cy,r]) => {
+    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.fill();
+  });
+
+  // Gear decorations (top-left, bottom-right)
+  drawGear(ctx, 60, 60, 34, 10, 'rgba(255,255,255,0.08)');
+  drawGear(ctx, W-60, H-60, 42, 12, 'rgba(255,255,255,0.07)');
+  drawGear(ctx, W*0.5, 30, 22, 8, 'rgba(255,255,255,0.06)');
+
+  // Top stripe
+  ctx.fillStyle = 'rgba(255,255,255,0.07)';
+  ctx.fillRect(0, 0, W, 10);
+  ctx.fillRect(0, H-10, W, 10);
+
+  // ---- WHITE CARD BODY ----
+  const cx = W/2, cardX = 40, cardW = W - 80;
+  cardRR(ctx, cardX, 90, cardW, H - 140, 24, 'rgba(255,255,255,0.96)');
+
+  // ---- HEADER BADGE ----
+  const hbW = 340, hbX = cx - hbW/2;
+  cardRR(ctx, hbX, 70, hbW, 54, 16, '#0f4c75');
+  ctx.fillStyle = 'white';
+  ctx.font = 'bold 17px Arial, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('بطاقة التقييم — الآلات البسيطة', cx, 103);
+
+  // ---- SCHOOL LOGO PLACEHOLDER (left) ----
+  ctx.fillStyle = '#e6f4fb';
+  cardRR(ctx, cardX + 20, 112, 70, 70, 12, '#e6f4fb');
+  ctx.strokeStyle = '#93c5fd'; ctx.lineWidth = 2; 
+  roundRectStroke(ctx, cardX+20, 112, 70, 70, 12);
+  ctx.fillStyle = '#1a6b9a'; ctx.font = 'bold 11px Arial'; ctx.textAlign = 'center';
+  ctx.fillText('⚙️', cx, 120); // will be overwritten by logo draw below
+
+  // Try to draw school logo
+  const logo = new Image();
+  logo.crossOrigin = 'anonymous';
+  logo.onload = () => {
+    ctx.drawImage(logo, cardX + 22, 114, 66, 66);
+    finishCard(ctx, W, H, cx, cardX, cardW, name, score, level, today, mode, canvas);
+  };
+  logo.onerror = () => {
+    // Draw fallback gear icon
+    ctx.fillStyle = '#1a6b9a'; ctx.font = '36px Arial'; ctx.textAlign='center';
+    ctx.fillText('⚙️', cardX+55, 156);
+    finishCard(ctx, W, H, cx, cardX, cardW, name, score, level, today, mode, canvas);
+  };
+  logo.src = 'https://i.postimg.cc/26jnR4Q1/sml-byt-hspr.png';
+}
+
+function finishCard(ctx, W, H, cx, cardX, cardW, name, score, level, today, mode, canvas) {
+  // ---- STUDENT NAME ----
+  ctx.fillStyle = '#0f4c75';
+  ctx.font = 'bold 30px Arial, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(name, cx, 160);
+
+  // Name underline
+  const nw = ctx.measureText(name).width;
+  ctx.strokeStyle = '#1b8ca1'; ctx.lineWidth = 2.5;
+  ctx.beginPath(); ctx.moveTo(cx - nw/2, 167); ctx.lineTo(cx + nw/2, 167); ctx.stroke();
+
+  // ---- DATE + SUBJECT ----
+  ctx.fillStyle = '#64748b'; ctx.font = '15px Arial';
+  ctx.fillText(`الصف السابع  ·  الفيزياء — الآلات البسيطة  ·  ${today}`, cx, 192);
+
+  // ---- SCORE CIRCLE ----
+  const scX = cx, scY = 278, scR = 68;
+  // Outer glow ring
+  ctx.strokeStyle = level.color; ctx.lineWidth = 6;
+  ctx.beginPath(); ctx.arc(scX, scY, scR+8, 0, Math.PI*2); ctx.stroke();
+  // Score arc (filled portion)
+  const pct = score / 20;
+  ctx.strokeStyle = level.color; ctx.lineWidth = 10;
+  ctx.beginPath();
+  ctx.arc(scX, scY, scR+8, -Math.PI/2, -Math.PI/2 + pct * Math.PI*2);
+  ctx.stroke();
+  // Circle fill
+  ctx.fillStyle = level.bg;
+  ctx.beginPath(); ctx.arc(scX, scY, scR, 0, Math.PI*2); ctx.fill();
+  ctx.strokeStyle = level.color; ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.arc(scX, scY, scR, 0, Math.PI*2); ctx.stroke();
+  // Score text
+  ctx.fillStyle = level.color;
+  ctx.font = 'bold 42px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(score, scX, scY + 12);
+  ctx.font = 'bold 14px Arial';
+  ctx.fillStyle = '#64748b';
+  ctx.fillText('من 20', scX, scY + 32);
+  // Level label above circle
+  ctx.fillStyle = level.color; ctx.font = 'bold 18px Arial';
+  ctx.fillText(level.label, scX, scY - scR - 18);
+
+  // ---- STARS ----
+  const starY = scY + scR + 30;
+  for (let i = 0; i < 5; i++) {
+    const sx = cx - 60 + i * 30;
+    ctx.fillStyle = i < level.star ? '#f59e0b' : '#e2e8f0';
+    ctx.font = '22px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('★', sx, starY);
+  }
+
+  // ---- ENCOURAGEMENT MESSAGE ----
+  const msgY = starY + 28;
+  cardRR(ctx, cardX + 30, msgY, cardW - 60, 58, 14, level.bg);
+  ctx.strokeStyle = level.color; ctx.lineWidth = 1.5;
+  roundRectStroke(ctx, cardX+30, msgY, cardW-60, 58, 14);
+  ctx.fillStyle = level.color; ctx.font = 'bold 16px Arial'; ctx.textAlign='center';
+  ctx.fillText(level.msg, cx, msgY + 23);
+  ctx.fillStyle = '#475569'; ctx.font = '14px Arial';
+  ctx.fillText('أستاذة: منى مصطفى  ·  متوسطة الصفوف العليا', cx, msgY + 46);
+
+  // ---- CRITERIA MINI TABLE ----
+  const tY = msgY + 76;
+  const cols = ['الالتزام والتنظيم','التطبيق والحساب','الفهم والتأمل'];
+  const colW = (cardW - 60) / 3;
+  const colX0 = cardX + 30;
+  cols.forEach((c, i) => {
+    const bx = colX0 + i * colW + 4, bw = colW - 8;
+    cardRR(ctx, bx, tY, bw, 66, 10, i===0?'#f0f7ff':i===1?'#f0fff4':'#f5f3ff');
+    ctx.strokeStyle = i===0?'#93c5fd':i===1?'#86efac':'#c4b5fd'; ctx.lineWidth=1.2;
+    roundRectStroke(ctx, bx, tY, bw, 66, 10);
+    ctx.fillStyle = i===0?'#1d4ed8':i===1?'#16a34a':'#7c3aed';
+    ctx.font = 'bold 12px Arial'; ctx.textAlign='center';
+    ctx.fillText(c, bx + bw/2, tY + 20);
+    // Mini stars per criterion
+    const cstar = Math.min(5, Math.round(level.star * (0.8 + Math.random()*0.4)));
+    for(let s=0;s<5;s++){
+      ctx.fillStyle = s < cstar ? '#f59e0b' : '#e2e8f0';
+      ctx.font = '14px Arial';
+      ctx.fillText('★', bx + 14 + s*14, tY + 48);
+    }
+    ctx.fillStyle='#64748b'; ctx.font='11px Arial';
+    ctx.fillText(cstar+'/5', bx+bw/2, tY+62);
+  });
+
+  // ---- BOTTOM RIBBON ----
+  const ribY = H - 48;
+  ctx.fillStyle = 'rgba(255,255,255,0.12)';
+  ctx.fillRect(0, ribY, W, 48);
+  ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.font = 'bold 14px Arial'; ctx.textAlign='center';
+  ctx.fillText('🚀 استمر في التعلم والاستكشاف — الفيزياء مغامرة لا تنتهي! ⚙️', cx, ribY + 28);
+
+  // ---- WATERMARK GEAR ----
+  ctx.globalAlpha = 0.04;
+  drawGear(ctx, cx, H/2, 200, 30, 'white');
+  ctx.globalAlpha = 1;
+
+  canvas.style.display = 'none';
+
+  // ---- DOWNLOAD ----
+  if (mode === 'img') {
+    const link = document.createElement('a');
+    link.download = `بطاقة_تقييم_${name.replace(/\s+/g,'_')}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    showSuccess(name, score, level);
+  } else {
+    // PDF via jsPDF (loaded dynamically)
+    if (typeof window.jspdf === 'undefined') {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+      s.onload = () => exportPDF(canvas, name, score, level);
+      document.head.appendChild(s);
+    } else {
+      exportPDF(canvas, name, score, level);
+    }
+  }
+}
+
+function exportPDF(canvas, name, score, level) {
+  canvas.style.display = 'block';
+  const imgData = canvas.toDataURL('image/png', 1.0);
+  canvas.style.display = 'none';
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [canvas.width, canvas.height] });
+  pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+  pdf.save(`بطاقة_تقييم_${name.replace(/\s+/g,'_')}.pdf`);
+  showSuccess(name, score, level);
+}
+
+function showSuccess(name, score, level) {
+  const area = document.querySelector('.dl-btn').closest('div').parentNode;
+  const msg = document.createElement('div');
+  msg.style.cssText = 'margin-top:20px; background:linear-gradient(135deg,#065f46,#059669); color:white; border-radius:16px; padding:22px 28px; text-align:center; animation:pop 0.4s ease;';
+  msg.innerHTML = `<div style="font-size:24px;font-weight:900;margin-bottom:8px;">🎉 تم إنشاء بطاقتك يا ${name}!</div>
+    <div style="font-size:15px;opacity:0.9;">درجتك: <strong>${score}/20</strong> — مستواك: <strong>${level.label}</strong></div>
+    <div style="font-size:13px;opacity:0.8;margin-top:6px;">${level.msg}</div>`;
+  area.appendChild(msg);
+}
+
+// ---- CANVAS HELPERS ----
+function drawGear(ctx, cx, cy, r, teeth, color) {
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  const toothH = r * 0.28, innerR = r * 0.72;
+  for (let i = 0; i < teeth; i++) {
+    const a1 = (i / teeth) * Math.PI * 2 - Math.PI / teeth * 0.4;
+    const a2 = a1 + (Math.PI * 2 / teeth) * 0.4;
+    const a3 = a2 + (Math.PI * 2 / teeth) * 0.2;
+    const a4 = a1 + Math.PI * 2 / teeth;
+    ctx.lineTo(cx + Math.cos(a1) * innerR, cy + Math.sin(a1) * innerR);
+    ctx.lineTo(cx + Math.cos(a1) * (r + toothH), cy + Math.sin(a1) * (r + toothH));
+    ctx.lineTo(cx + Math.cos(a2) * (r + toothH), cy + Math.sin(a2) * (r + toothH));
+    ctx.lineTo(cx + Math.cos(a3) * innerR, cy + Math.sin(a3) * innerR);
+  }
+  ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.arc(cx, cy, innerR * 0.42, 0, Math.PI*2); ctx.fill();
+}
+
+function cardRR(ctx, x, y, w, h, r, fill) {
+  ctx.fillStyle = fill;
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath(); ctx.fill();
+}
+
+function roundRectStroke(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath(); ctx.stroke();
+}
+
+// ===== INIT =====
+updateLever();
+setPulleyType('fixed');
+</script>
+</body>
+</html>
