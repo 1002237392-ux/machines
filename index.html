@@ -1697,8 +1697,9 @@ function checkLeverCalc() {
   const ans = parseFloat(document.getElementById('lCalcD1').value);
   const el = document.getElementById('lCalcAns');
   el.style.display = 'block';
-  if (Math.abs(ans - 4) < 0.2) el.innerHTML = '✅ صحيح تماماً! 30 × 4 = 60 × 2 = 120 ن·م — الرافعة متزنة!';
-  else el.innerHTML = `❌ راجع حسابك: 30 × ؟ = 60 × 2 = 120، إذاً ؟ = 120 ÷ 30 = 4 متر`;
+  // سارة 300 نيوتن × 2 متر = أخوها 400 نيوتن × ؟ → ؟ = 600 ÷ 400 = 1.5 متر
+  if (Math.abs(ans - 1.5) < 0.1) el.innerHTML = '✅ صحيح تماماً! 300 × 2 = 400 × 1.5 = 600 ن·م — الترجيحة متزنة!';
+  else el.innerHTML = '❌ راجع حسابك: 300 × 2 = 600، إذاً ؟ = 600 ÷ 400 = 1.5 متر';
 }
 
 function checkPulleyCalc() {
